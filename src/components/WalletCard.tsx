@@ -29,7 +29,7 @@ const WalletCard = ({account,index,setAccounts,toggleVisibility}:any)=>{
           )}
         </button> 
       </div>
-                      <li className="bg-background p-2">Public key: {account.publicKey}</li>
+                      <li className="bg-background p-2 break-all">Public key: {account.publicKey}</li>
                       <li className="bg-background p-2">Balance: 14000 SOL</li>
                     </ul>
                   </div>

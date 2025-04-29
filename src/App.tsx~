@@ -8,7 +8,7 @@ import { Button } from "./components/ui/button"
 import { Input } from "./components/ui/input"
 import bs58 from 'bs58';
 import WalletCard from "@/components/WalletCard";
-import { Tabs, TabsContent, TabsTrigger, TabsList } from "@/components/ui/tabs"
+import { Tabs } from "@/components/tabs"
 function App() {
 
   // TODO: Add balance fetch logic
@@ -140,33 +140,6 @@ function App() {
           </div>
         </div>
       </div>
-
-      <Tabs defaultValue="solana" className="md:hidden mt-5">
-        <TabsList className=" mx-auto">
-        <TabsTrigger value="solana">
-            Solana
-        </TabsTrigger>
-        <TabsTrigger value="ethereum">
-            Ethereum
-        </TabsTrigger>
-        </TabsList>
-        <TabsContent value="solana">
-            Solana Wallet
-          {solAccounts && solAccounts.length != 0 && solAccounts.map((account:any, index: any)=>{
-            return(
-              <WalletCard account={account} index={index} setAccounts={setSolAccounts} toggleVisibility={toggleVisibility}/>
-            )
-          })}
-        </TabsContent>
-        <TabsContent value="ethereum">
-          Ethereum Wallet
-          {ethAccounts && ethAccounts.length != 0 && ethAccounts.map((account:any, index: any)=>{
-            return(
-              <WalletCard account={account} index={index} setAccounts={setEthAccounts} toggleVisibility={toggleVisibility}/>
-            )
-          })}
-        </TabsContent>
-      </Tabs>
 
     </div>
   )
