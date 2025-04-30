@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import WalletCard from "@/components/WalletCard"
 import { useWalletStore } from "@/contexts/WalletContext"
 import { Button } from "./ui/button"
+import { WalletAccount } from "@/lib/types"
 
 function NetworkTabs() {
   const { solAccounts, ethAccounts, toggleVisibility , addSolAccount, addEthAccount} = useWalletStore()
@@ -19,7 +20,7 @@ function NetworkTabs() {
         <div className="relative h-[calc(100vh-200px)]">
           <div className="h-[calc(100vh-250px)] flex flex-col gap-2 overflow-y-auto">
 
-            {solAccounts && solAccounts.length != 0 && solAccounts.map((account: any, index: any) => {
+            {solAccounts && solAccounts.length != 0 && solAccounts.map((account: WalletAccount, index: number) => {
               return (
                 <WalletCard key={index} account={account} index={index} type={'sol'} toggleVisibility={toggleVisibility} />
               )
@@ -33,7 +34,7 @@ function NetworkTabs() {
       <TabsContent value="ethereum">
         <div className="relative h-[calc(100vh-200px)]">
           <div className="h-[calc(100vh-250px)] flex flex-col gap-2 overflow-y-auto">
-            {ethAccounts && ethAccounts.length != 0 && ethAccounts.map((account: any, index: any) => {
+            {ethAccounts && ethAccounts.length != 0 && ethAccounts.map((account: WalletAccount, index: number) => {
               return (
                 <WalletCard key={index} account={account} index={index} type={'eth'} toggleVisibility={toggleVisibility} />
               )

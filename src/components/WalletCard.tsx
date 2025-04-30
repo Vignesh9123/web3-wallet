@@ -1,6 +1,7 @@
 import { Eye, EyeOff } from "lucide-react"
+import { WalletAccount } from "@/lib/types"
 
-const WalletCard = ({account,index,type,toggleVisibility}:any)=>{
+const WalletCard = ({account,index,type,toggleVisibility}: {account: WalletAccount, index: number, type: 'sol' | 'eth', toggleVisibility: (account: WalletAccount, type: 'sol' | 'eth') => void})=>{
     return(
     <div className="bg-muted w-full h-auto p-5">
                     <h1 className="text-center font-bold text-lg mb-2">Wallet {index + 1}</h1>
