@@ -31,7 +31,7 @@ const WalletCard = ({account,index,type,toggleVisibility}: {account: WalletAccou
         </button> 
       </div>
                       <li className="bg-background p-2 break-all">Public key: {account.publicKey}</li>
-                      <li className="bg-background p-2">Balance: 14000 {type === 'sol' ? 'SOL' : 'ETH'}</li>
+                      <li className="bg-background p-2">Balance: {account.balance || 0} {type === 'sol' ? 'SOL' : 'ETH'}</li>
                     </ul>
                   </div>
     )
